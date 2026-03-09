@@ -110,7 +110,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href=""
+              href="https://www.linkedin.com/in/arthrnsm/"
               className="flex items-center justify-center border border-[#6F05F0] bg-[#6F05F0] text-white rounded-xl px-10 py-4 w-full sm:w-auto"
               whileHover={{
                 scale: 1.05,
@@ -132,9 +132,9 @@ export default function Hero() {
             animate="visible"
             custom={0.9}
           >
-            <SocialMedia link="" icon={SiGmail} />
-            <SocialMedia link="" icon={FaGithub} />
-            <SocialMedia link="" icon={FaLinkedinIn} />
+            <SocialMedia link="mailto:arthur.rdnascimento@gmail.com" icon={SiGmail} />
+            <SocialMedia link="https://github.com/arthurnsm" icon={FaGithub} />
+            <SocialMedia link="https://www.linkedin.com/in/arthrnsm/" icon={FaLinkedinIn} />
           </motion.div>
         </>
       )}
