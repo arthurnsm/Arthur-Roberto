@@ -93,6 +93,7 @@ export default function Hero() {
             custom={0.7}
           >
             <motion.a
+                target="_blank"
               href=""
               className="flex items-center justify-center border border-[#6F05F0] text-[#6F05F0] rounded-xl px-10 py-4 w-full sm:w-auto"
               whileHover={{
@@ -110,7 +111,8 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="https://www.linkedin.com/in/arthrnsm/"
+              href="mailto:arthur.rdnascimento@gmail.com"
+              target="_blank"
               className="flex items-center justify-center border border-[#6F05F0] bg-[#6F05F0] text-white rounded-xl px-10 py-4 w-full sm:w-auto"
               whileHover={{
                 scale: 1.05,
