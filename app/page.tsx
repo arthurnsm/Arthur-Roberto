@@ -5,7 +5,7 @@ import About from "./components/about";
 import Project from "./components/projects";
 export default function Home() {
   return (
-    <main className="flex w-full flex-col gap-60 h-screen">
+    <main className="flex w-full flex-col h-screen">
       <Navbar/>
       <Hero/>
       <About/>
