@@ -54,6 +54,7 @@ const stacks = [
   { link: "https://cdn.simpleicons.org/git", name: "Git" },
   { link: "https://cdn.simpleicons.org/github/fff", name: "GitHub", className: "invert dark:invert-0" },
 ];
+
 export default function About() {
   const [mounted, setMounted] = useState(false);
 
@@ -136,7 +137,7 @@ export default function About() {
             </motion.span>
 
             <motion.div
-              className="mt-10 flex flex-wrap justify-center gap-8 md:gap-20"
+              className="mt-10 grid grid-cols-4 md:flex md:flex-wrap justify-center gap-8 md:gap-20"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
@@ -147,24 +148,24 @@ export default function About() {
                 },
               }}
             >
-       {stacks.map(({ link, className, name }) => (
-  <motion.div
-    key={link}
-    variants={{
-      hidden: { opacity: 0, y: 20 },
-      visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 0.5,
-          ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-        },
-      },
-    }}
-  >
-    <StackIcon link={link} className={className} name={name} />
-  </motion.div>
-))}
+              {stacks.map(({ link, className, name }) => (
+                <motion.div
+                  key={link}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        duration: 0.5,
+                        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+                      },
+                    },
+                  }}
+                >
+                  <StackIcon link={link} className={className} name={name} />
+                </motion.div>
+              ))}
             </motion.div>
 
           </div>

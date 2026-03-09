@@ -100,7 +100,6 @@ export default function Hero() {
                 scale: 1.05,
                 backgroundColor: "#6F05F0",
                 color: "#ffffff",
-                boxShadow: "0 0 24px #6F05F088, 0 0 6px #6F05F0cc",
               }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.25 }}
@@ -116,7 +115,7 @@ export default function Hero() {
               className="flex items-center justify-center border border-[#6F05F0] bg-[#6F05F0] text-white rounded-xl px-10 py-4 w-full sm:w-auto"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 28px #6F05F0bb, 0 0 8px #6F05F0dd",
+                
               }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.25 }}

@@ -65,3 +65,10 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'raintion';
+  src: url('/fonts/raintion.ttf') format('ttf');
+  font-weight: thin;
+  font-style: normal;
+  font-display: swap;
+}
