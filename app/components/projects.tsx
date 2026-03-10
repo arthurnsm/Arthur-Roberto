@@ -7,7 +7,7 @@ import Repo from "./repo";
 import Caffino from '../../public/images/caffino.jpg'
 import Primal from '../../public/images/primal.png'
 import { useLanguage } from "../context/languageContext";
-
+import Black from '../../public/images/black.png'
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   visible: (delay: number) => ({
@@ -93,7 +93,7 @@ export default function Project() {
                 custom={0.1}
               >
                 <Repo
-                  image={""}
+                  image={Black}
                   title={t("Em breve", "Coming soon")}
                   desc={t(
                     "Novo projeto em desenvolvimento. Fique ligado para novidades em breve.",
