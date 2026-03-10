@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import SocialMedia from "./socialMedia";
-import Section from "./section";
+import { useLanguage } from "../context/languageContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +28,7 @@ const fadeUp = {
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -35,6 +36,7 @@ export default function Hero() {
 
   return (
     <section
+      id="home"
       className={`${inter.className} flex w-full flex-col items-center justify-center min-h-screen px-4 py-20 gap-12`}
       style={{ opacity: mounted ? undefined : 0 }}
     >
@@ -58,7 +60,7 @@ export default function Hero() {
               animate="visible"
               custom={0.3}
             >
-              DESENVOLVEDOR FRONT END
+              {t("DESENVOLVEDOR FRONT END", "FRONT END DEVELOPER")}
             </motion.h2>
           </div>
 
@@ -69,20 +71,22 @@ export default function Hero() {
             animate="visible"
             custom={0.5}
           >
-            Desenvolvo soluções{" "}
+            {t("Desenvolvo soluções", "I develop solutions")}{" "}
             <span className="text-[#6F05F0] font-medium">
-              web responsivas{" "}
+              {t("web responsivas ", "responsive websites ")}
             </span>
-            que unem a estética do{" "}
+            {t("que unem a estética do", "that blend the aesthetics of")}{" "}
             <span className="text-[#6F05F0] font-medium">
-              design moderno
+              {t("design moderno", "modern design")}
             </span>
-            {" "}com as{" "}
+            {" "}{t("com as", "with the")}{" "}
             <span className="text-[#6F05F0] font-medium">
-              tecnologias mais atuais do mercado.
+              {t("tecnologias mais atuais do mercado.", "latest technologies on the market.")}
             </span>
-            {" "}Crio experiências digitais fluidas e intuitivas, garantindo
-            personalidade em qualquer dispositivo.
+            {" "}{t(
+              "Crio experiências digitais fluidas e intuitivas, garantindo personalidade em qualquer dispositivo.",
+              "I create fluid and intuitive digital experiences, ensuring personality on any device."
+            )}
           </motion.h3>
 
           <motion.div
@@ -93,7 +97,7 @@ export default function Hero() {
             custom={0.7}
           >
             <motion.a
-                target="_blank"
+              target="_blank"
               href=""
               className="flex items-center justify-center border border-[#6F05F0] text-[#6F05F0] rounded-xl px-10 py-4 w-full sm:w-auto"
               whileHover={{
@@ -105,7 +109,7 @@ export default function Hero() {
               transition={{ duration: 0.25 }}
             >
               <span className="font-[revolin] font-thin text-lg md:text-2xl whitespace-nowrap">
-                Baixar meu CV
+                {t("Baixar meu CV", "Download my CV")}
               </span>
             </motion.a>
 
@@ -113,15 +117,12 @@ export default function Hero() {
               href="mailto:arthur.rdnascimento@gmail.com"
               target="_blank"
               className="flex items-center justify-center border border-[#6F05F0] bg-[#6F05F0] text-white rounded-xl px-10 py-4 w-full sm:w-auto"
-              whileHover={{
-                scale: 1.05,
-                
-              }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.25 }}
             >
               <span className="font-[revolin] font-thin text-lg md:text-2xl whitespace-nowrap">
-                Entrar em contato
+                {t("Entrar em contato", "Get in touch")}
               </span>
             </motion.a>
           </motion.div>

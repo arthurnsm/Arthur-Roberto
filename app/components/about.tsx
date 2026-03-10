@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Section from "./section";
 import { FaGlobeAmericas } from "react-icons/fa";
 import StackIcon from "./stack-icon";
+import { useLanguage } from "../context/languageContext";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -57,6 +58,7 @@ const stacks = [
 
 export default function About() {
   const [mounted, setMounted] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -64,12 +66,13 @@ export default function About() {
 
   return (
     <section
+      id="about"
       className="flex w-full flex-col px-4 md:px-30"
       style={{ opacity: mounted ? undefined : 0 }}
     >
       {mounted && (
         <>
-          <Section title="sobre mim" />
+          <Section title={t("sobre mim", "about me")} />
 
           <div className="flex mt-12 md:mt-24 flex-col md:flex-row items-center md:items-start gap-8 md:gap-0">
 
@@ -94,7 +97,7 @@ export default function About() {
               >
                 <span className="font-[inter] flex justify-center items-center gap-2">
                   <FaGlobeAmericas size={20} className="text-black dark:text-[#858585]" />
-                  São Paulo, Brasil
+                  {t("São Paulo, Brasil", "São Paulo, Brazil")}
                 </span>
               </motion.div>
 
@@ -107,16 +110,10 @@ export default function About() {
                 custom={0.2}
               >
                 <span className="font-[inter] text-base md:text-xl lg:text-2xl text-center md:text-left leading-relaxed">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s,
-                  when an unknown printer took a galley of type and it to
-                  make a type specimen book. It has survived not only five
-                  centuries, but also the leap into electronic typesetting
-                  industry's standard dummy text ever since the 1500s,
-                  when an unknown printer took a galley of type and it to
-                  make a type specimen book. It has survived not only five
-                  centuries, but also the leap into electronic typesetting
+                  {t(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                  )}
                 </span>
               </motion.div>
 
@@ -133,7 +130,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.5 }}
               custom={0}
             >
-              MINHA STACK
+              {t("MINHA STACK", "MY STACK")}
             </motion.span>
 
             <motion.div
